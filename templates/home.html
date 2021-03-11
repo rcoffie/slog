@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+<div class="col-md-8">
+  {% if user.is_authenticated %}
+
+  <p>  hi {{ user.username}} </p> 
+ 
+  <p> <a href="{% url 'logout' %}"> Log Out</a> </p>
+
+
+  {% else %}
+
+  <div class="alert alert-primary" role="alert">
+    You are not login <a href="{% url 'login' %}" class="alert-link">click this link to login </a>. Give it a click if you like.
+  </div>
+
+  {% endif %}
+</div>
+
+{% endblock %}
